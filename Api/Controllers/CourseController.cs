@@ -27,21 +27,21 @@ namespace Api.Controllers
     };
 
         [HttpGet]
-        public ActionResult<IEnumerable<Course>> GetAll_DataCourse()
+        public ActionResult<IEnumerable<Course>> GetAllDataCourse()
         {
             return DataCourse.ToList();
 
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Course> GetById_Course(string id)
+        public ActionResult<Course> GetByIdCourse(string id)
         {
             return DataCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
         }
 
 
         [HttpPost]
-        public Course Add_Course([FromBody] Course CourseAll)
+        public Course AddCourse([FromBody] Course CourseAll)
         {
 
             // var _id = Guid.NewGuid().ToString();
@@ -58,7 +58,7 @@ namespace Api.Controllers
 
 
         [HttpPut  ("{id}")]
-        public Course Edit_Course(string id, [FromBody] Course CourseAll)
+        public Course EditCourse(string id, [FromBody] Course CourseAll)
         {
 
             var _id = DataCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
@@ -76,7 +76,7 @@ namespace Api.Controllers
         }
 
          [HttpDelete ("{id}")]
-        public void Delete_Course(string id)
+        public void DeleteCourse(string id)
         {
             var data = DataCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
             DataCourse.Remove(data);

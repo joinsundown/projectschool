@@ -37,14 +37,14 @@ namespace Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult <Teacher> GetById_Teacher(string id)
+        public ActionResult <Teacher> GetByIdTeacher(string id)
         {
             return DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
         }
 
 
         [HttpPost]
-        public Teacher AddUser_Teacher([FromBody] Teacher Teacher)
+        public Teacher AddUserTeacher([FromBody] Teacher Teacher)
         {
 
             var item = new Teacher
@@ -64,7 +64,7 @@ namespace Api.Controllers
 
 
         [HttpPut("{id}")]
-        public Teacher Edit_Teacher(string id, [FromBody] Teacher Teacher)
+        public Teacher EditTeacher(string id, [FromBody] Teacher Teacher)
         {
 
             var _id = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
@@ -87,7 +87,7 @@ namespace Api.Controllers
 
 
         [HttpDelete("{id}")]
-        public void Delete_Teacher(string id)
+        public void DeleteTeacher(string id)
         {
             var data = DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
             DataTeacher.Remove(data);
