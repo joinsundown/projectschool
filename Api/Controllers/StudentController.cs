@@ -33,6 +33,13 @@ namespace Api.Controllers
             return DataStudent.ToList();
         }
 
+        
+            [HttpGet("{data}")]
+        public ActionResult <Student> GetBydatastudentBydata(string data)
+        {
+            return DataStudent.FirstOrDefault(it => it.UsernameStudent == data.ToString());
+        }
+
 
         [HttpGet("{id}")]
         public ActionResult<Student> GetById_Student(string id)

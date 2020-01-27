@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SHOWTEACHER</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-row text-center >
+
+      <ion-col><label>Id</label></ion-col>
+      <ion-col><label>Name</label></ion-col>
+      <ion-col><label>Status</label></ion-col>
+      <ion-col><label>Email</label></ion-col>
+      <ion-col><label>SelectCourse</label></ion-col>
+      <ion-col><label>Confirm</label></ion-col>
+
+    </ion-row>
+
+    <form>
+      <ion-row text-center *ngIf="showDatateacher != null" >
+        <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
+        <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
+        <ion-col><label>{{ showDatateacher.statusTeacher }}</label></ion-col>
+        <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
+
+
+        <ion-col>
+          <label class="item item-input item-select">
+            <div class="input-label"></div>
+            <ion-select placeholder="เลือกวิชา" >
+              <ion-select-option ></ion-select-option>
+            </ion-select>
+          </label>
+        </ion-col>
+
+
+
+        <ion-col>
+          <ion-button color="primary" type="submit">เพิ่มวิชาเรียน</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-row text-center>
+
+      <ion-col><label>รหัสวิชา</label></ion-col>
+      <ion-col><label>ชื่อวิชา</label></ion-col>
+      <ion-col><label>รายชื่อนักเรียน</label></ion-col>
+
+    </ion-row>
+    <ion-row text-center>
+      <ion-col><label></label></ion-col>
+      <ion-col><label></label></ion-col>
+      <ion-col>
+        <ion-button >รายชื่อ</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-card>
+</ion-content>

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { teacher } from '../app/models/teacher';
-import { student } from '../app/models/student';
-import { course } from '../app/models/course';
-import { openCourse } from '../app/models/openCourse';
+import { teacher } from '../models/teacher';
+import { student } from '../models/student';
+import { course } from '../models/course';
+import { openCourse } from '../models/openCourse';
 
 
 @Injectable({
@@ -13,8 +13,8 @@ export class CallapiService {
 
   public static host: string = "https://localhost:5001/api/";
 
-
-
+  alluser : any;
+  
 
   constructor(public http: HttpClient) { }
 
@@ -29,7 +29,9 @@ export class CallapiService {
   public getById_Teacher(id:string) {
     return this.http.get<teacher>(CallapiService.host + 'Teacher/GetById_Teacher/' + id);
   }
-
+  public getBydata_Teacher(data:string) {
+    return this.http.get<teacher>(CallapiService.host + 'Teacher/GetBydatateacherBydata/' + data);
+  }
 
   public add_Teacher(data) {
     return this.http.post<teacher>(CallapiService.host + 'Teacher/AddUser_Teacher', data);
@@ -50,7 +52,7 @@ export class CallapiService {
   //   return this.http.put<userTeacher>(CallapiService.host + 'Teacher/AddStudentToCourse/'+ id+ '/' +id2 +'/',data);
   // }
   
-
+  
 
   // -----------------------------------------Student-----------------------------------------------------------------
 
@@ -61,6 +63,9 @@ export class CallapiService {
 
   public getById_Student(id: string) {
     return this.http.get<student>(CallapiService.host + 'Student/GetById_Student/' + id);
+  }
+  public getBydata_Student(data:string) {
+    return this.http.get<student>(CallapiService.host + 'Student/GetBydatastudentBydata/' + data);
   }
 
   public add_Student(data) {
