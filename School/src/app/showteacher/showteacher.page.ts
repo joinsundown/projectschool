@@ -21,8 +21,8 @@ export class ShowteacherPage implements OnInit {
     this.getdatateacher = this.formbuilder.group({
       'idTeacher': [null, Validators.required],
       'nameTeacher': [null, Validators.required],
-      'statusTeacher': [null, Validators.required],
-      'emailTeacher': [null, Validators.required]
+      'emailTeacher': [null, Validators.required],
+      'statusTeacher': [null, Validators.required]
     });
 
    }

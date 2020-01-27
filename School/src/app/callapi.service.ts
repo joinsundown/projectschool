@@ -81,8 +81,8 @@ export class CallapiService {
 
   // ------------------------------------------Course-----------------------------------------------------
 
-  public getAllDataCourse(id: string) {
-    return this.http.get<course>(CallapiService.host + 'Course/GetAllDataCourse/' + id);
+  public getAllDataCourse() {
+    return this.http.get<course>(CallapiService.host + 'Course/GetAllDataCourse');
   }
 
 public getByIdCourse(id: string) {

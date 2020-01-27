@@ -5,5 +5,32 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="allDataUpdateCourse" (ngSubmit)="editIdCourse()" class="text-center">
+
+    <ion-row>
+      <ion-col><label>IdCourse</label></ion-col>
+      <ion-col><label>NameCourse</label></ion-col>
+      <ion-col><label>Update</label></ion-col>
+      <ion-col><label>Cancel</label></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-input formControlName="idCourse"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input formControlName="nameCourse"></ion-input>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="primary" type="submit">update</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" routerLink="/showcourse">cancel</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
 
 </ion-content>

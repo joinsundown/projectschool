@@ -6,7 +6,7 @@ export class student {
     passwordStudent: string;
     nameStudent: string;
     emailStudent: string;
-    statusStudent: string;
+    statusstudent: string;
 
 
 }
