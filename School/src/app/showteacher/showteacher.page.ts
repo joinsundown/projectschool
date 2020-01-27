@@ -34,7 +34,7 @@ export class ShowteacherPage implements OnInit {
   }
 
   getTeacherById() {
-    this.callapi.getById_Teacher(this.idDatateacher).subscribe(it => {
+    this.callapi.getByIdTeacher(this.idDatateacher).subscribe(it => {
       this.showDatateacher = it;
       console.log(this.showDatateacher);
       
