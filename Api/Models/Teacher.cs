@@ -7,7 +7,7 @@ namespace Api.Models
         public string PasswordTeacher { get; set; }
         public string NameTeacher { get; set; }
         public string EmailTeacher { get; set; }
-        public string Status { get; set; }
+        public string Statusteacher { get; set; }
 
     }
 }
