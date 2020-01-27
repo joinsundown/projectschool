@@ -33,14 +33,14 @@ namespace Api.Controllers
   
 
         [HttpGet]
-        public ActionResult<IEnumerable<OpenCourse>> GetAll_DataOpenCourse()
+        public ActionResult<IEnumerable<OpenCourse>> GetAllDataOpenCourse()
         {
             return DataOpenCourse.ToList();
 
         }
 
         [HttpGet("{id}")]
-        public ActionResult<OpenCourse> GetById_OpenCourse(string id)
+        public ActionResult<OpenCourse> GetByIdOpenCourse(string id)
         {
             return DataOpenCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
         }
@@ -63,7 +63,7 @@ namespace Api.Controllers
 
 
         [HttpPut("{id}")]
-        public OpenCourse Edit_OpenCourse(string id, [FromBody] OpenCourse OpenCoursex)
+        public OpenCourse EditOpenCourse(string id, [FromBody] OpenCourse OpenCoursex)
         {
             var _id = DataOpenCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
 
@@ -80,7 +80,7 @@ namespace Api.Controllers
 
 
         [HttpDelete("{id}")]
-        public void Delete_OpenCourse(string id)
+        public void DeleteOpenCourse(string id)
         {
             var data = DataOpenCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
             DataOpenCourse.Remove(data);
