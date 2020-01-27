@@ -21,8 +21,8 @@ namespace Api.Controllers
         public static List<Student> DataStudent = new List<Student>
         {
 
-            new Student { IdStudent = "001",UsernameStudent = "ABCD" , PasswordStudent = "1111",  NameStudent ="ดำรง หอมจัง", Status = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th" },
-            new Student { IdStudent = "002",UsernameStudent = "ABCE" , PasswordStudent = "2222",  NameStudent ="เหล้าขาว จุบุ", Status = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th" }
+            new Student { IdStudent = "001",UsernameStudent = "ABCD" , PasswordStudent = "1111",  NameStudent ="ดำรง หอมจัง", StatusStudent = "Student" ,EmailStudent = "dummuk_toky@hotmail.co.th" },
+            new Student { IdStudent = "002",UsernameStudent = "ABCE" , PasswordStudent = "2222",  NameStudent ="เหล้าขาว จุบุ", StatusStudent = "Student" ,EmailStudent = "pekpek_toto@hotmail.co.th" }
         };
 
 
@@ -60,7 +60,7 @@ namespace Api.Controllers
 
                 IdStudent = Student.IdStudent,
                 NameStudent = Student.NameStudent,
-                Status = Student.Status,
+                StatusStudent = Student.StatusStudent,
                 EmailStudent = Student.EmailStudent,
 
             };
@@ -82,7 +82,7 @@ namespace Api.Controllers
 
                 IdStudent = id.ToString(),
                 NameStudent = Student.NameStudent,
-                Status = Student.Status,
+                StatusStudent = Student.StatusStudent,
                 EmailStudent = Student.EmailStudent,
 
             };

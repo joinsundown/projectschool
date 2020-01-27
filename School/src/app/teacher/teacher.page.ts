@@ -29,14 +29,14 @@ export class TeacherPage implements OnInit {
 
     });
   }
-  delete_Teacher(id) {
+  deleteTeacher(id) {
     
     this.callapi.deleteTeacher(id).subscribe(data => {
       this.getAllData();
     });
 
   }
-  edit_Teacher(id) {
+  editTeacher(id) {
     console.log(id);
     
   
