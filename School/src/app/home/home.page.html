@@ -10,7 +10,9 @@
 
   <br><br>
   <ion-card>
-    <ion-label><h1>LOGIN</h1></ion-label>
+    <ion-label routerLink="/login">
+      <h1>LOGIN</h1>
+    </ion-label>
   </ion-card>
 
 
@@ -24,30 +26,30 @@
       <ion-select-option value="teacher">TEACHER</ion-select-option>
     </ion-select>
   </ion-card>
-  <form>
+  <form [formGroup]="studentData">
     <div *ngIf="statusop == 'student'" text-center>
-
       <ion-card><br><br>
-        <ion-label>:: USERNAME ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
-        <ion-label>:: PASSWORD ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
         <ion-label>:: ID STUDENT ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='idStudent'></ion-input>
+        <ion-label>:: USERNAME ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='usernameStudent'></ion-input>
+        <ion-label>:: PASSWORD ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='passwordStudent'></ion-input>
         <ion-label>:: FULL NAME ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='nameStudent'></ion-input>
+        <ion-label>:: EMAILL ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='emailStudent'></ion-input>
         <label class="item item-input item-select">:: STATUS ::
           <div class="input-label"></div><br>
-          <select>
+          <select formControlName='status'>
             <option>นักเรียน</option>
+            <option>อาจารย์</option>
           </select>
         </label><br><br>
-        <ion-label>:: EMAILL ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
         <ion-row>
           <ion-col>
-            <ion-button color="dark">addstudent</ion-button>
-            <ion-button color="dark">cancle</ion-button>
+            <ion-button color="dark" (click)="addStudent(data)">addstudent</ion-button>
+            <ion-button color="dark" routerLink="/home">cancle</ion-button>
           </ion-col>
         </ion-row>
       </ion-card>
@@ -55,29 +57,31 @@
     </div>
   </form>
 
-  <form>
+  <form [formGroup]="teacherData">
     <div *ngIf="statusop == 'teacher'" text-center>
       <ion-card><br><br>
-        <ion-label>:: USERNAME ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
-        <ion-label>:: PASSWORD ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
+
         <ion-label>:: ID TEACHER ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='idTeacher'></ion-input>
+        <ion-label>:: USERNAME ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='usernameTeacher'></ion-input>
+        <ion-label>:: PASSWORD ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='passwordTeacher'></ion-input>
         <ion-label>:: FULL NAME ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='nameTeacher'></ion-input>
+        <ion-label>:: EMAILL ::</ion-label>
+        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล" formControlName='emailTeacher'></ion-input>
         <label class="item item-input item-select">:: STATUS ::
           <div class="input-label"></div><br>
-          <select>
+          <select formControlName='status'>
+            <option>นักเรียน</option>
             <option>อาจารย์</option>
           </select>
         </label><br><br>
-        <ion-label>:: EMAILL ::</ion-label>
-        <ion-input color="warning" placeholder="กรุณากรอกข้อมูล"></ion-input>
         <ion-row>
           <ion-col>
-            <ion-button color="dark">addteacher</ion-button>
-            <ion-button color="dark">cancle</ion-button>
+            <ion-button color="dark" (click)="addTeacher(data)">addteacher</ion-button>
+            <ion-button color="dark" routerLink="/home">cancle</ion-button>
           </ion-col>
         </ion-row><br>
       </ion-card>
