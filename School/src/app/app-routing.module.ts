@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'showteacher',
     loadChildren: () => import('./showteacher/showteacher.module').then( m => m.ShowteacherPageModule)
-  },  {
+  },
+  {
     path: 'teacher',
     loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
   },
@@ -22,6 +23,18 @@ const routes: Routes = [
   {
     path: 'showstudent',
     loadChildren: () => import('./showstudent/showstudent.module').then( m => m.ShowstudentPageModule)
+  },
+  {
+    path: 'updateteacher',
+    loadChildren: () => import('./updateteacher/updateteacher.module').then( m => m.UpdateteacherPageModule)
+  },
+  {
+    path: 'updatestudent',
+    loadChildren: () => import('./updatestudent/updatestudent.module').then( m => m.UpdatestudentPageModule)
+  },
+  {
+    path: 'updatecourse',
+    loadChildren: () => import('./updatecourse/updatecourse.module').then( m => m.UpdatecoursePageModule)
   },
 
 ];

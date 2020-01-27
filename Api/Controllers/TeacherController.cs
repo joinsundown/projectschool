@@ -22,8 +22,8 @@ namespace Api.Controllers
         public static List<Teacher> DataTeacher = new List<Teacher>
      {
 
-        new Teacher { IdTeacher = "001", UsernameTeacher = "teacher1", PasswordTeacher = "1111",  NameTeacher ="Nameteacher1", Status = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" },
-        new Teacher { IdTeacher = "002", UsernameTeacher = "teacher2", PasswordTeacher = "2222", NameTeacher ="Nameteacher2", Status = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" }
+        new Teacher { IdTeacher = "001", UsernameTeacher = "teacher1", PasswordTeacher = "1111",  NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" },
+        new Teacher { IdTeacher = "002", UsernameTeacher = "teacher2", PasswordTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" }
 
     };
 
@@ -61,7 +61,7 @@ namespace Api.Controllers
 
                 IdTeacher = Teacher.IdTeacher,
                 NameTeacher = Teacher.NameTeacher,
-                Status = Teacher.Status,
+                StatusTeacher = Teacher.StatusTeacher,
                 EmailTeacher = Teacher.EmailTeacher
             };
             DataTeacher.Add(item);
@@ -83,7 +83,7 @@ namespace Api.Controllers
 
                 IdTeacher = id.ToString(),
                 NameTeacher = Teacher.NameTeacher,
-                Status = Teacher.Status,
+                StatusTeacher = Teacher.StatusTeacher,
                 EmailTeacher = Teacher.EmailTeacher
             };
             DataTeacher.Remove(_id);

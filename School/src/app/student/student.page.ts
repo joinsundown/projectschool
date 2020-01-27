@@ -31,11 +31,9 @@ export class StudentPage implements OnInit {
     });
 
   }
-  editTeacher(id) {
+  editStudent(id) {
     console.log(id);
-    
-  
-    this.router.navigate(['/updateteacher', { _id: id }]);
+    this.router.navigate(['/updatestudent', { _id: id }]);
   }
 
 }

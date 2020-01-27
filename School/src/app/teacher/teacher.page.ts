@@ -39,7 +39,6 @@ export class TeacherPage implements OnInit {
   editTeacher(id) {
     console.log(id);
     
-  
     this.router.navigate(['/updateteacher', { _id: id }]);
   }
 
