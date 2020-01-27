@@ -16,12 +16,21 @@ const routes: Routes = [
     loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
   },
   {
+<<<<<<< HEAD
     path: 'course',
     loadChildren: () => import('./course/course.module').then( m => m.CoursePageModule)
   },
   {
     path: 'showcourse',
     loadChildren: () => import('./showcourse/showcourse.module').then( m => m.ShowcoursePageModule)
+=======
+    path: 'student',
+    loadChildren: () => import('./student/student.module').then( m => m.StudentPageModule)
+  },
+  {
+    path: 'showstudent',
+    loadChildren: () => import('./showstudent/showstudent.module').then( m => m.ShowstudentPageModule)
+>>>>>>> 632ab6aad4b03880d767a6d3b9d19330568bd53a
   },
 
 ];

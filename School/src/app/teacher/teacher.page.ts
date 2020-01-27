@@ -29,5 +29,21 @@ export class TeacherPage implements OnInit {
 
     });
   }
+<<<<<<< HEAD
+=======
+  deleteTeacher(id) {
+    
+    this.callapi.deleteTeacher(id).subscribe(data => {
+      this.getAllData();
+    });
+
+  }
+  editTeacher(id) {
+    console.log(id);
+    
+  
+    this.router.navigate(['/updateteacher', { _id: id }]);
+  }
+>>>>>>> 632ab6aad4b03880d767a6d3b9d19330568bd53a
 
 }
