@@ -42,6 +42,12 @@ namespace Api.Controllers
             return DataTeacher.FirstOrDefault(it => it.IdTeacher == id.ToString());
         }
 
+            [HttpGet("{data}")]
+        public ActionResult <Teacher> GetBydatateacherBydata(string data)
+        {
+            return DataTeacher.FirstOrDefault(it => it.UsernameTeacher == data.ToString());
+        }
+
 
         [HttpPost]
         public Teacher AddUserTeacher([FromBody] Teacher Teacher)

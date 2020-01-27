@@ -6,7 +6,7 @@ export class teacher {
     passwordTeacher: string;
     nameTeacher: string;
     emailTeacher: string;
-    status: string;
+    statusTeacher: string;
 
 
 }
