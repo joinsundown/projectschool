@@ -10,7 +10,7 @@ namespace Api.Models
         public string PasswordStudent { get; set; }
         public string NameStudent { get; set; }
         public string EmailStudent { get; set; }
-        public string Status { get; set; }
+        public string StatusStudent { get; set; }
 
 
         public Course[] CourseS { get; set; }
