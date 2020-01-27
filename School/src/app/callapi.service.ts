@@ -29,6 +29,9 @@ export class CallapiService {
   public getByIdTeacher(id:string) {
     return this.http.get<teacher>(CallapiService.host + 'Teacher/GetByIdTeacher/' + id);
   }
+  public getDataTeacher(data : string) {
+    return this.http.get<teacher>(CallapiService.host + 'Teacher/GetBydatateacherBydata/'+ data);
+  }
   public addTeacher(data) {
     return this.http.post<teacher>(CallapiService.host + 'Teacher/AddUserTeacher', data);
   }
@@ -59,6 +62,9 @@ export class CallapiService {
 
   public getByIdStudent(id: string) {
     return this.http.get<student>(CallapiService.host + 'Student/GetByIdStudent/' + id);
+  }
+  public getDataStudent(data : string) {
+    return this.http.get<student>(CallapiService.host + 'Student/GetBydatastudentBydata/'+ data);
   }
 
   public addStudent(data) {
@@ -111,6 +117,7 @@ public getAllDataOpenCourse() {
 public getByIdOpenCourse(id: string) {
   return this.http.get<openCourse>(CallapiService.host + 'OpenCourse/GetByIdOpenCourse/' + id);
 }
+
 
 public addOpenCourse(data) {
   return this.http.post<openCourse>(CallapiService.host + 'OpenCourse/AddOpenCourse', data);

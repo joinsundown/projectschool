@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
   }
   chklogin() {
     if (this.user.value.user != "" && this.user.value.password != "") {
-      this.callapi.getByIdTeacher(this.user.value.user).subscribe(it => {
+      this.callapi.getDataTeacher(this.user.value.user).subscribe(it => {
         this.datausername = it
         console.log(this.datausername);
         if (this.datausername == null) {
@@ -56,7 +56,7 @@ export class LoginPage implements OnInit {
         }
       })
 
-      this.callapi.getByIdStudent(this.user.value.user).subscribe(it => {
+      this.callapi.getDataStudent(this.user.value.user).subscribe(it => {
         this.datausername2 = it
         console.log(this.datausername2);
         if (this.datausername2 == null) {
