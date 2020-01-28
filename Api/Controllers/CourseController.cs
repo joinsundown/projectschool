@@ -19,12 +19,17 @@ namespace Api.Controllers
 
         public static List<Course> DataCourse = new List<Course>
      {
-
-        new Course { IdCourse = "1001", NameCourse = "วิชาภาษาไทย" },
-        new Course { IdCourse = "2002", NameCourse = "วิชาภาษาอะไร" }
-
-
+        new Course { IdCourse = "0101", NameCourse = "course1" },
+        new Course { IdCourse = "0202", NameCourse = "course2" }
     };
+        //     public static List<Course> DataCourse = new List<Course>
+        //  {
+
+        //     new Course { IdCourse = "1001", NameCourse = "วิชาภาษาไทย" },
+        //     new Course { IdCourse = "2002", NameCourse = "วิชาภาษาอะไร" }
+
+
+        // };
 
         [HttpGet]
         public ActionResult<IEnumerable<Course>> GetAllDataCourse()
@@ -47,17 +52,18 @@ namespace Api.Controllers
             // var _id = Guid.NewGuid().ToString();
             var item = new Course
             {
-                
+
                 IdCourse = CourseAll.IdCourse,
                 NameCourse = CourseAll.NameCourse,
-           
+                
+
             };
             DataCourse.Add(item);
             return item;
         }
 
 
-        [HttpPut  ("{id}")]
+        [HttpPut("{id}")]
         public Course EditCourse(string id, [FromBody] Course CourseAll)
         {
 
@@ -67,7 +73,7 @@ namespace Api.Controllers
             {
                 IdCourse = id.ToString(),
                 NameCourse = CourseAll.NameCourse,
-                
+
             };
             DataCourse.Remove(_id);
             DataCourse.Add(item);
@@ -75,12 +81,12 @@ namespace Api.Controllers
             return item;
         }
 
-         [HttpDelete ("{id}")]
+        [HttpDelete("{id}")]
         public void DeleteCourse(string id)
         {
             var data = DataCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
             DataCourse.Remove(data);
-         
+
         }
 
 

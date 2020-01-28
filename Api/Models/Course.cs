@@ -9,6 +9,5 @@ namespace Api.Models
         public string NameCourse { get; set; }
 
 
-
     }
 }

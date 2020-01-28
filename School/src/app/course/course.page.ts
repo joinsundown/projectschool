@@ -28,7 +28,7 @@ export class CoursePage implements OnInit {
   AddCourse(){
     this.addcourseData = (this.courseData.value);
     console.log(this.addcourseData); 
-    this.callapi.addCourse(this.addcourseData).subscribe(it =>{
+    this.callapi.addCourse2(this.addcourseData).subscribe(it =>{
       console.log(it);
       
     });

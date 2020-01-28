@@ -7,7 +7,7 @@
 <ion-content>
 
   <ion-card>
-    <ion-row text-center >
+    <ion-row text-center>
 
       <ion-col><label>Id</label></ion-col>
       <ion-col><label>Name</label></ion-col>
@@ -18,31 +18,34 @@
 
     </ion-row>
 
-    <form>
-      <ion-row text-center *ngIf="showDatateacher != null" >
-        <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.statusteacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
+    <!-- <form [formGroup]="courseData"  (ngSubmit)="AddCourseTeacher()"> -->
+    <ion-row text-center *ngIf="showDatateacher != null">
+      <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.statusTeacher }}</label></ion-col>
+      <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
 
 
-        <ion-col>
-          <label class="item item-input item-select">
-            <div class="input-label"></div>
-            <ion-select placeholder="เลือกวิชา" >
-              <ion-select-option ></ion-select-option>
-            </ion-select>
-          </label>
-        </ion-col>
+      <ion-col>
+        <label class="item item-input item-select">
+          <div class="input-label"></div>
+          <ion-select placeholder="เลือกวิชา" [(ngModel)]="data" (ionChange)="chang(data)">
+            <ion-select-option *ngFor="let s of showCourse" value="{{ s.idCourse  }}">{{s.nameCourse}}
+            </ion-select-option>
+          </ion-select>
+        </label>
+      </ion-col>
 
 
 
-        <ion-col>
-          <ion-button color="primary" type="submit">เพิ่มวิชาเรียน</ion-button>
-        </ion-col>
-      </ion-row>
+      <ion-col>
+        <!-- <ion-button color="primary" type="submit">เพิ่มวิชาเรียน</ion-button> -->
+        <ion-button (click)="addCourseTeacher()">เพิ่มวิชาเรียน</ion-button>
+        
+      </ion-col>
+    </ion-row>
 
-    </form>
+    <!-- </form> -->
 
 
   </ion-card>
@@ -60,7 +63,7 @@
       <ion-col><label></label></ion-col>
       <ion-col><label></label></ion-col>
       <ion-col>
-        <ion-button >รายชื่อ</ion-button>
+        <ion-button>รายชื่อ</ion-button>
       </ion-col>
     </ion-row>
 

@@ -23,7 +23,7 @@ export class ShowcoursePage implements OnInit {
   }
 
   getAllData() {
-    this.callapi.getAllDataCourse().subscribe(data => {
+    this.callapi.getAllDataOpenCourse().subscribe(data => {
       this.getdataAllcourse = data;
       console.log(this.getdataAllcourse);
 

@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
       'passwordTeacher': [null, Validators.required],
       'nameTeacher': [null, Validators.required],
       'emailTeacher': [null, Validators.required],
-      'status': [null, Validators.required],
+      'statusTeacher': [null, Validators.required],
     });
 
     this.studentData = this.formbuilder.group({
@@ -33,7 +33,7 @@ export class HomePage implements OnInit {
       'passwordStudent': [null, Validators.required],
       'nameStudent': [null, Validators.required],
       'emailStudent': [null, Validators.required],
-      'status': [null, Validators.required],
+      'statusStudent': [null, Validators.required],
     });
   }
   ngOnInit() {

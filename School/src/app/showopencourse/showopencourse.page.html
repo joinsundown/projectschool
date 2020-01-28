@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>showcourse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col><label>Id_Course</label></ion-col>
+      <ion-col><label>Name_Course</label></ion-col>
+      <ion-col><label>Update</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
+
+    </ion-row>
+    <ion-row *ngFor='let data of getalldataopencourse;let i = index'>
+      <ion-col><label>{{data.idCourse}}</label></ion-col>
+      <ion-col><label>{{data.nameCourse}}</label></ion-col>
+
+      <ion-col>
+        <ion-button color="primary" (click)="showdetailopencourse(data.idCourse)">โชว์ข้อมูล</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" ></ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

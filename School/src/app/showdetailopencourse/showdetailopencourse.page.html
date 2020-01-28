@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>showdetailopencourse</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col><label>idTeacher</label></ion-col>
+      <ion-col><label>usernameTeacher</label></ion-col>
+      <ion-col><label>passwordTeacher</label></ion-col>
+      <ion-col><label>nameTeacher</label></ion-col>
+      <ion-col><label>emailTeacher</label></ion-col>
+      <ion-col><label>statusTeacher</label></ion-col>
+
+    </ion-row>
+    <ion-row *ngFor='let data of all;let i = index'>
+      
+ 
+      <ion-col><label>{{d.idTeacher}}</label></ion-col>
+      <ion-col><label>{{d.usernameTeacher}}</label></ion-col>
+
+      <ion-col>
+        <ion-button color="primary" (click)="showdetailopencourse(data.idCourse)">โชว์ข้อมูล</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" ></ion-button>
+      </ion-col>
+
+  </ion-row>
+
+  </ion-card>
+</ion-content>
