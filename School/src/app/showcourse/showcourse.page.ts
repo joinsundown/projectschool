@@ -30,6 +30,19 @@ export class ShowcoursePage implements OnInit {
     });
   }
 
+  editCourse(id) {
+    console.log(id);
+    this.router.navigate(['/updatecourse', { _id: id }]);
   }
+
+  deleteCourse(id) {
+    
+    this.callapi.deleteCourse(id).subscribe(data => {
+      this.getAllData();
+    });
+
+  }
+  
+}
 
 

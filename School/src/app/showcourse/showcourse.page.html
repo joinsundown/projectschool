@@ -18,11 +18,11 @@
       <ion-col><label>{{data.nameCourse}}</label></ion-col>
 
       <ion-col>
-        <ion-button color="primary"></ion-button>
+        <ion-button color="primary" (click)="editCourse(data.idCourse)"></ion-button>
       </ion-col>
 
       <ion-col>
-        <ion-button color="danger" ></ion-button>
+        <ion-button color="danger" (click)="deleteCourse(data.idCourse)"></ion-button>
       </ion-col>
     </ion-row>
 

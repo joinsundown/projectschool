@@ -22,8 +22,14 @@ namespace Api.Controllers
         public static List<Teacher> DataTeacher = new List<Teacher>
      {
 
+<<<<<<< HEAD
         new Teacher { IdTeacher = "001", UsernameTeacher = "teacher1", PasswordTeacher = "1111",  NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th"},
         new Teacher { IdTeacher = "002", UsernameTeacher = "teacher2", PasswordTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" }
+=======
+        new Teacher { IdTeacher = "001", UsernameTeacher = "teacher1", PasswordTeacher = "1111",  NameTeacher ="Nameteacher1", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" },
+        new Teacher { IdTeacher = "002", UsernameTeacher = "teacher2", PasswordTeacher = "2222", NameTeacher ="Nameteacher2", StatusTeacher = "Teacher" ,EmailTeacher = "Timber_Comfort@hotmail.co.th" }
+
+>>>>>>> b54ca3d3403142cbf35e5d0795f17ee9333ce24b
     };
 
    

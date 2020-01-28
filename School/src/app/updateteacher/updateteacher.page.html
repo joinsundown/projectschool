@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>updateteacher</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="allDataUpdateTeacher" (ngSubmit)="editIdTeaccher()" class="text-center">
+    <ion-card>
+      <ion-row>
+        <ion-col><label>Id</label></ion-col>
+        <ion-col><label>Username</label></ion-col>
+        <ion-col><label>Password</label></ion-col>
+        <ion-col><label>Name</label></ion-col>
+        <ion-col><label>Email</label></ion-col>
+        <ion-col><label>Status</label></ion-col>
+        <ion-col><label>Update</label></ion-col>
+        <ion-col><label>Cancel</label></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-input formControlName="idTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="usernameTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="passwordTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="nameTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="emailTeacher"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input formControlName="statusTeacher"></ion-input>
+        </ion-col>
+
+        <ion-col>
+          <ion-button color="primary" type="submit">update</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" routerLink="/showteacher">cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+  </form>
+
+</ion-content>
