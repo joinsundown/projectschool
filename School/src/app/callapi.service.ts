@@ -14,6 +14,7 @@ export class CallapiService {
   public static host: string = "https://localhost:5001/api/";
 
   alluser: any;
+  idcourse:any;
 
 
   constructor(public http: HttpClient) { }

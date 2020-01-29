@@ -12,8 +12,7 @@
       <ion-col><label>Name</label></ion-col>
       <ion-col><label>Status</label></ion-col>
       <ion-col><label>Email</label></ion-col>
-      <ion-col><label>SelectCourse</label></ion-col>
-      <ion-col><label>Confirm</label></ion-col>
+     
 
     </ion-row>
 
@@ -25,23 +24,29 @@
         <ion-col><label>{{ showDatastudent.emailStudent }}</label></ion-col>
 
 
-        <ion-col>
-          <label class="item item-input item-select">
-            <div class="input-label"></div>
-            <ion-select placeholder="เลือกวิชา" >
-              <ion-select-option ></ion-select-option>
-            </ion-select>
-          </label>
-        </ion-col>
 
 
-
-        <ion-col>
-          <ion-button color="primary" type="submit">เพิ่มวิชาเรียน</ion-button>
-        </ion-col>
       </ion-row>
 
     </form>
+
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-row text-center>
+      <ion-col><label>IDCOURSE</label></ion-col>
+      <ion-col><label>NAMECOURSE</label></ion-col>
+      <ion-col><label>DATA</label></ion-col>
+    </ion-row>
+
+    <ion-row text-center *ngFor='let data of getalldataopencourse;let i = index'>
+      <ion-col><label>{{data.idCourse}}</label></ion-col>
+      <ion-col><label>{{data.nameCourse}}</label></ion-col>
+      <ion-col><ion-button (click)="getcoursebyid(data.idCourse)">ดูข้อมูล</ion-button></ion-col>
+    </ion-row>
+
 
 
   </ion-card>

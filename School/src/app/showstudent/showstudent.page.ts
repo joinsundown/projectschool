@@ -3,6 +3,7 @@ import { CallapiService } from '../callapi.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { student } from 'src/models/student';
+import { openCourse } from 'src/models/openCourse';
 
 @Component({
   selector: 'app-showstudent',
@@ -12,12 +13,17 @@ import { student } from 'src/models/student';
 export class ShowstudentPage implements OnInit {
 
   idDatateacher: any;
-  showDatastudent :student;
+  showDatastudent: student;
   getdatastudent: FormGroup;
 
-  constructor(public callapi:CallapiService ,public router : Router,public formbuilder : FormBuilder, public activate: ActivatedRoute) {
+  getalldataopencourse: openCourse;
+
+  idcourse: any;
+  all: openCourse;
+
+  constructor(public callapi: CallapiService, public router: Router, public formbuilder: FormBuilder, public activate: ActivatedRoute) {
     this.idDatateacher = this.activate.snapshot.paramMap.get('_data');
-    
+
     this.getdatastudent = this.formbuilder.group({
       'idTeacher': [null, Validators.required],
       'nameTeacher': [null, Validators.required],
@@ -25,9 +31,11 @@ export class ShowstudentPage implements OnInit {
       'emailTeacher': [null, Validators.required]
     });
 
-   }
+  }
   ngOnInit() {
     this.getByIdStudent();
+    this.getAllDataopenCourse();
+    // this.getbyidcourse();
   }
 
   getByIdStudent() {
@@ -37,4 +45,16 @@ export class ShowstudentPage implements OnInit {
     });
 
   }
+  getAllDataopenCourse() {
+
+    this.callapi.getAllDataOpenCourse().subscribe(data => {
+      this.getalldataopencourse = data;
+      console.log(this.getalldataopencourse);
+
+    });
+  }
+  getcoursebyid(id){
+    this.router.navigate(['/showdetailopencourse',{idc:id}])
+  }
+
 }

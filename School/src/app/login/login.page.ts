@@ -66,7 +66,7 @@ export class LoginPage implements OnInit {
         {
           if (this.user.value.user == this.datausername2.usernameStudent && this.user.value.password == this.datausername2.passwordStudent) {
             console.log("welcomeStudent");
-            // this.route.navigate(['/showteacher' ,{_data:this.datausername2.idStudent}]);
+            this.route.navigate(['/showstudent' ,{_data:this.datausername2.idStudent}]);
           }
 
         }

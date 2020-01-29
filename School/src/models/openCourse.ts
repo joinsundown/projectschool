@@ -5,7 +5,7 @@ export class openCourse{
 
     idCourse: string;
     nameCourse: string;
-    datateacher : teacher[] = [];
-    datastudent : student[] = [];
+    teachers : teacher[] = [];
+    students : student[] = [];
 
 }
