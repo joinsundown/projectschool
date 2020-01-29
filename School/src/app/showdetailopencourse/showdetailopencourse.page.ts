@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CallapiService } from '../callapi.service';
 import { ActivatedRoute } from '@angular/router';
+import { openCourse } from 'src/models/openCourse';
 
 @Component({
   selector: 'app-showdetailopencourse',
@@ -9,10 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShowdetailopencoursePage implements OnInit {
 
-  idcourse : any;
-  all :any;
+  idcourse: any;
+  all: openCourse;
+  getalldataopencourse: openCourse;
 
-  constructor(public callapi: CallapiService,public activate: ActivatedRoute) { 
+  constructor(public callapi: CallapiService, public activate: ActivatedRoute) {
     this.idcourse = this.activate.snapshot.paramMap.get('id');
     console.log(this.idcourse);
 
@@ -20,18 +22,27 @@ export class ShowdetailopencoursePage implements OnInit {
 
   ngOnInit() {
     this.getTeacherByIdinOpencourse();
+
   }
 
   getTeacherByIdinOpencourse() {
     this.callapi.getByIdOpenCourse(this.idcourse).subscribe(it => {
       console.log(it);
-      this.idcourse = it;
+
       this.all = it;
       console.log(this.all);
-      
 
-});
+
+    });
   }
+  // getAllDataopenCourse() {
+  //   this.callapi.getAllDataOpenCourse().subscribe(data => {
+  //     this.getalldataopencourse = data;
+  //     console.log(this.getalldataopencourse);
+
+  //   });
+
+  // }
 
 
 }

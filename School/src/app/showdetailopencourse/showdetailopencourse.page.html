@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>showdetailopencourse</ion-title>
   </ion-toolbar>
@@ -14,9 +14,10 @@
       <ion-col><label>statusTeacher</label></ion-col>
 
     </ion-row>
-    <ion-row *ngFor='let data of all;let i = index'>
-      
- 
+    <ion-row *ngFor='let d of all.teachers'>
+
+
+
       <ion-col><label>{{d.idTeacher}}</label></ion-col>
       <ion-col><label>{{d.usernameTeacher}}</label></ion-col>
 
@@ -25,10 +26,41 @@
       </ion-col>
 
       <ion-col>
-        <ion-button color="danger" ></ion-button>
+        <ion-button color="danger"></ion-button>
       </ion-col>
 
-  </ion-row>
+    </ion-row>
 
   </ion-card>
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>showcourse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+    <ion-row>
+      <ion-col><label>IdCourse</label></ion-col>
+      <ion-col><label>NameCourse</label></ion-col>
+      <ion-col><label>Update</label></ion-col>
+      <ion-col><label>Delete</label></ion-col>
+
+    </ion-row>
+    <ion-row *ngFor='let d of all.teachers'>
+      <ion-col><label>{{d.idTeacher}}</label></ion-col>
+      <ion-col><label>{{d.usernameTeacher}}</label></ion-col>
+ 
+      <ion-col>
+        <ion-button color="primary" >โชว์ข้อมูล</ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" ></ion-button>
+      </ion-col>
+    </ion-row>
+
+  
 </ion-content>

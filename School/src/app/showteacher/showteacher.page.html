@@ -18,21 +18,12 @@
 
     </ion-row>
 
-<<<<<<< HEAD
     <!-- <form [formGroup]="courseData"  (ngSubmit)="AddCourseTeacher()"> -->
     <ion-row text-center *ngIf="showDatateacher != null">
       <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
       <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
       <ion-col><label>{{ showDatateacher.statusTeacher }}</label></ion-col>
       <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
-=======
-    <form>
-      <ion-row text-center *ngIf="showDatateacher != null" >
-        <ion-col><label>{{ showDatateacher.idTeacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.nameTeacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.emailTeacher }}</label></ion-col>
-        <ion-col><label>{{ showDatateacher.statusTeacher }}</label></ion-col>
->>>>>>> b54ca3d3403142cbf35e5d0795f17ee9333ce24b
 
 
       <ion-col>
@@ -59,23 +50,4 @@
 
   </ion-card>
 
-  <ion-card>
-
-    <ion-row text-center>
-
-      <ion-col><label>รหัสวิชา</label></ion-col>
-      <ion-col><label>ชื่อวิชา</label></ion-col>
-      <ion-col><label>รายชื่อนักเรียน</label></ion-col>
-
-    </ion-row>
-    <ion-row text-center>
-      <ion-col><label></label></ion-col>
-      <ion-col><label></label></ion-col>
-      <ion-col>
-        <ion-button>รายชื่อ</ion-button>
-      </ion-col>
-    </ion-row>
-
-
-  </ion-card>
 </ion-content>
