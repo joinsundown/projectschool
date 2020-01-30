@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CallapiService } from '../callapi.service';
 import { ActivatedRoute } from '@angular/router';
 import { openCourse } from 'src/models/openCourse';
+import { course } from 'src/models/course';
 
 @Component({
   selector: 'app-showdetailopencourse',
@@ -14,6 +15,7 @@ export class ShowdetailopencoursePage implements OnInit {
   all: openCourse;
   getalldataopencourse: openCourse;
   xxx:any;
+
 
   constructor(public callapi: CallapiService, public activate: ActivatedRoute) {
     this.idcourse = this.activate.snapshot.paramMap.get('idc');
@@ -52,5 +54,9 @@ export class ShowdetailopencoursePage implements OnInit {
 
   }
 
+  
+ 
+ 
+  }
 
-}
+

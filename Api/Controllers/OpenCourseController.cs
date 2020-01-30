@@ -170,7 +170,9 @@ namespace Api.Controllers
             {
                 IdCourse = id.ToString(),
                 NameCourse = data.NameCourse,
-                Teachers = sss.ToArray()
+                Teachers = sss.ToArray(),
+                Students = data.Students
+
             };
 
             DataOpenCourse.Remove(data);
@@ -195,6 +197,58 @@ namespace Api.Controllers
             // };
         }
 
+
+         [HttpPut("{id}")]
+        public OpenCourse AddStudentInOpenCourse(string id, [FromBody] Student Student)
+        {
+            var data = DataOpenCourse.FirstOrDefault(it => it.IdCourse == id.ToString());
+            var sss = data.Students.ToList();
+            Console.WriteLine(data.Students.ToList());
+
+            // var ss = data.Student.ToArray();
+            var item = new Student
+            {
+
+                UsernameStudent = Student.UsernameStudent,
+                PasswordStudent = Student.PasswordStudent,
+
+                IdStudent = Student.IdStudent,
+                NameStudent = Student.NameStudent,
+                StatusStudent = Student.StatusStudent,
+                EmailStudent = Student.EmailStudent
+            };
+            sss.Add(item);
+            Console.WriteLine(sss.ToList());
+
+            var item2 = new OpenCourse
+            {
+                IdCourse = id.ToString(),
+                NameCourse = data.NameCourse,
+                Teachers = data.Teachers,
+                Students = sss.ToArray()
+            };
+
+            DataOpenCourse.Remove(data);
+            DataOpenCourse.Add(item2);
+            //    data.Student.ToList().Add(item);
+            // var len = ss.Length;
+            // Array.Resize(ref ss, ss.Length + 1);
+            // var len = data.Student.Length;
+            // Array arr = new Array [len];
+            // Console.WriteLine(arr.Length);
+            // for (int i = 0; i < len; i++)
+            // {
+
+            //      Console.WriteLine(i);
+            // }
+            return item2;
+            // var item = new Opencourse
+            // {
+            //     IdCourse = id.ToString(),
+            //     NameCourse = data.NameCourse,
+            //     Student = data.Student,
+            // };
+        }
     }
 }
 

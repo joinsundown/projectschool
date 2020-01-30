@@ -12,23 +12,36 @@ import { openCourse } from 'src/models/openCourse';
 })
 export class ShowstudentPage implements OnInit {
 
-  idDatateacher: any;
+  idDatastudent: any;
   showDatastudent: student;
   getdatastudent: FormGroup;
 
   getalldataopencourse: openCourse;
 
   idcourse: any;
+  getIdCourse: any;
   all: openCourse;
 
+  getcourse : openCourse;
+  showOpencourse : openCourse[] = [];
+ 
+  
+
+  dataaa = {
+    'idCourse': "",
+    'nameCourse': "",
+    'teacher': [],
+    'student':[]
+  };
+
   constructor(public callapi: CallapiService, public router: Router, public formbuilder: FormBuilder, public activate: ActivatedRoute) {
-    this.idDatateacher = this.activate.snapshot.paramMap.get('_data');
+    this.idDatastudent = this.activate.snapshot.paramMap.get('_data');
 
     this.getdatastudent = this.formbuilder.group({
-      'idTeacher': [null, Validators.required],
-      'nameTeacher': [null, Validators.required],
-      'statusTeacher': [null, Validators.required],
-      'emailTeacher': [null, Validators.required]
+      'idStudent': [null, Validators.required],
+      'nameStudent': [null, Validators.required],
+      'statusStudent': [null, Validators.required],
+      'emailStudent': [null, Validators.required]
     });
 
   }
@@ -39,7 +52,7 @@ export class ShowstudentPage implements OnInit {
   }
 
   getByIdStudent() {
-    this.callapi.getByIdStudent(this.idDatateacher).subscribe(it => {
+    this.callapi.getByIdStudent(this.idDatastudent).subscribe(it => {
       this.showDatastudent = it;
       console.log(this.showDatastudent);
     });
@@ -53,8 +66,26 @@ export class ShowstudentPage implements OnInit {
 
     });
   }
-  getcoursebyid(id){
+  getcoursebyid(id,a){
     this.router.navigate(['/showdetailopencourse',{idc:id}])
+    this.getIdCourse = a;
+    console.log( this.getIdCourse);
+    
   }
 
+  addCourseStudent(getId:string) {
+    console.log(getId);
+    // this.getcourse = this.showOpencourse.find(it => it.idCourse == this.getIdCourse);
+    this.dataaa.idCourse = getId;
+    // this.dataaa.nameCourse = this.getcourse.nameCourse.toString();
+    this.dataaa.student.push(this.showDatastudent);
+    console.log(this.dataaa);
+    console.log(this.dataaa.student);
+    this.callapi.AddStudentInOpenCourse(this.dataaa.idCourse,this.dataaa.student[0]).subscribe(it=>{
+        console.log(it);
+        
+    });
+    
+}
+ 
 }

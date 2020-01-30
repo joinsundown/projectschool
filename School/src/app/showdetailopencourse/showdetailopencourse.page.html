@@ -13,11 +13,14 @@
 
       <ion-col><label>IDTEACHER</label></ion-col>
       <ion-col><label>NAMETEACHER</label></ion-col>
+      <ion-col><label>ADDCOURSE</label></ion-col>
+
 
     </ion-row>
       <ion-row *ngFor="let t of xxx;let i = index" text-center>
         <ion-col>{{t.idTeacher}}</ion-col>
         <ion-col>{{t.nameTeacher}}</ion-col>
+        <ion-col><ion-button>เพิ่มวิชาเรียน</ion-button></ion-col>
       </ion-row>
      
     </ion-card>

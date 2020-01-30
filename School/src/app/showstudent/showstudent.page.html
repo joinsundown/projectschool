@@ -6,18 +6,18 @@
 
 <ion-content>
   <ion-card>
-    <ion-row text-center >
+    <ion-row text-center>
 
       <ion-col><label>Id</label></ion-col>
       <ion-col><label>Name</label></ion-col>
       <ion-col><label>Status</label></ion-col>
       <ion-col><label>Email</label></ion-col>
-     
+
 
     </ion-row>
 
     <form>
-      <ion-row text-center *ngIf="showDatastudent != null" >
+      <ion-row text-center *ngIf="showDatastudent != null">
         <ion-col><label>{{ showDatastudent.idStudent }}</label></ion-col>
         <ion-col><label>{{ showDatastudent.nameStudent }}</label></ion-col>
         <ion-col><label>{{ showDatastudent.statusStudent }}</label></ion-col>
@@ -39,12 +39,18 @@
       <ion-col><label>IDCOURSE</label></ion-col>
       <ion-col><label>NAMECOURSE</label></ion-col>
       <ion-col><label>DATA</label></ion-col>
+      <ion-col><label>ADDCOURSE</label></ion-col>
     </ion-row>
 
     <ion-row text-center *ngFor='let data of getalldataopencourse;let i = index'>
       <ion-col><label>{{data.idCourse}}</label></ion-col>
       <ion-col><label>{{data.nameCourse}}</label></ion-col>
-      <ion-col><ion-button (click)="getcoursebyid(data.idCourse)">ดูข้อมูล</ion-button></ion-col>
+      <ion-col>
+        <ion-button (click)="getcoursebyid(data.idCourse)">ดูข้อมูล</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="addCourseStudent(data.idCourse)">เพิ่มวิชา</ion-button>
+      </ion-col>
     </ion-row>
 
 

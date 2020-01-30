@@ -72,6 +72,9 @@ export class CallapiService {
     return this.http.post<student>(CallapiService.host + 'Student/AddUserStudent', data);
   }
 
+ 
+
+
   public editStudent(id: string, data) {
     return this.http.put<student>(CallapiService.host + 'Student/EditStudent/' + id, data);
   }
@@ -138,6 +141,12 @@ export class CallapiService {
 
   public AddTeacherInOpenCourse(id: string, data) {
     return this.http.put<openCourse>(CallapiService.host + 'OpenCourse/AddTeacherInOpenCourse/' + id, data);
+  }
+  
+  public AddStudentInOpenCourse(id: string, data) {
+    console.log(id);
+    console.log(data);
+    return this.http.put<openCourse>(CallapiService.host + 'OpenCourse/AddStudentInOpenCourse/' + id, data);
   }
 
 

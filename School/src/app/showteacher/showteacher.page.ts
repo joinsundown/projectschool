@@ -15,12 +15,13 @@ export class ShowteacherPage implements OnInit {
 
   idDatateacher: any;
   showDatateacher: teacher;
-  test: teacher[] = [];
   getdatateacher: FormGroup;
   getIdCourse: any;
   getcourse: course;
   showCourse: course[] = [];
   courseData: FormGroup;
+
+  dataTeacher:openCourse[]=[];
   // dataOpenCourse: openCourse;
 
   dataaa = {
@@ -52,6 +53,7 @@ export class ShowteacherPage implements OnInit {
   ngOnInit() {
     this.getTeacherById();
     this.getCourse();
+    this.getCourse2();
 
   }
 
@@ -74,6 +76,22 @@ export class ShowteacherPage implements OnInit {
     });
   }
 
+  getCourse2() {
+    
+    this.callapi.getAllDataOpenCourse().subscribe(it => {
+      console.log(it);
+      for (let index = 0; index < Object.keys(it).length; index++) {
+        this.dataTeacher[index] = it[index];
+        
+      }
+      console.log(this.dataTeacher);
+      console.log(this.dataTeacher[0].teachers[0].idTeacher);
+      var filter = this.dataTeacher.filter(it => it.teachers.find(it => it.idTeacher == this.idDatateacher));
+      console.log(filter);
+      
+    });
+  }
+
   chang(s) {
     this.getIdCourse = s;
     console.log(this.getIdCourse);
@@ -84,8 +102,6 @@ export class ShowteacherPage implements OnInit {
     this.getcourse = this.showCourse.find(it => it.idCourse == this.getIdCourse);
     // console.log(this.getcourse);
     // console.log(this.showDatateacher);
-    
-   
     this.dataaa.idCourse = this.getcourse.idCourse.toString();
     this.dataaa.nameCourse = this.getcourse.nameCourse.toString();
     this.dataaa.teacher.push(this.showDatateacher);
@@ -104,5 +120,9 @@ export class ShowteacherPage implements OnInit {
     // console.log(this.dataOpenCourse.datateacher); 
  
   }
+
+
+
+
 
 }
