@@ -67,6 +67,9 @@ export class ShowteacherPage implements OnInit {
     });
 
   }
+  getstudentbyid(id){
+    this.router.navigate(['/showdatastudent',{idc:id}])
+  }
 
   getCourse() {
     this.callapi.getAllDataOpenCourse().subscribe(it => {

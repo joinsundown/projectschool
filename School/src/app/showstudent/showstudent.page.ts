@@ -66,10 +66,9 @@ export class ShowstudentPage implements OnInit {
 
     });
   }
-  getcoursebyid(id,a){
+  getcoursebyid(id){
     this.router.navigate(['/showdetailopencourse',{idc:id}])
-    this.getIdCourse = a;
-    console.log( this.getIdCourse);
+  
     
   }
 

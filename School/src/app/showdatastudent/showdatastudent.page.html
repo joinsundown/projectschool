@@ -13,9 +13,11 @@
 
       <ion-col><label>รหัสนักเรียน/นิสิต/นักศึกษา</label></ion-col>
       <ion-col><label>ชื่อนักเรียน/นิสิต/นักศึกษา</label></ion-col>
-     
+    </ion-row>
 
-
+    <ion-row *ngFor="let t of xxx;let i = index" text-center>
+      <ion-col>{{t.idStudent}}</ion-col>
+      <ion-col>{{t.nameStudent}}</ion-col>
     </ion-row>
  
     </ion-card>
