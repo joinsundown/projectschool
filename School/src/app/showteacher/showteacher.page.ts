@@ -20,6 +20,7 @@ export class ShowteacherPage implements OnInit {
   getcourse: course;
   showCourse: course[] = [];
   courseData: FormGroup;
+  showcourseteacher :any;
 
   dataTeacher:openCourse[]=[];
   // dataOpenCourse: openCourse;
@@ -54,6 +55,7 @@ export class ShowteacherPage implements OnInit {
     this.getTeacherById();
     this.getCourse();
     this.getCourse2();
+  
 
   }
 
@@ -88,6 +90,7 @@ export class ShowteacherPage implements OnInit {
       console.log(this.dataTeacher[0].teachers[0].idTeacher);
       var filter = this.dataTeacher.filter(it => it.teachers.find(it => it.idTeacher == this.idDatateacher));
       console.log(filter);
+      this.showcourseteacher = filter;
       
     });
   }

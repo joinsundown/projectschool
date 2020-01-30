@@ -53,6 +53,10 @@ const routes: Routes = [
     path: 'updatecourse',
     loadChildren: () => import('./updatecourse/updatecourse.module').then( m => m.UpdatecoursePageModule)
   },
+  {
+    path: 'showdatastudent',
+    loadChildren: () => import('./showdatastudent/showdatastudent.module').then( m => m.ShowdatastudentPageModule)
+  },
 
 ];
 

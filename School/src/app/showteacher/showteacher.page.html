@@ -53,7 +53,7 @@
 
   <ion-card>
 
-    <ion-row text-center>
+    <ion-row text-center  >
 
       <ion-col><label>COURSE</label></ion-col>
       <ion-col><label>NAMECOURSE</label></ion-col>
@@ -61,9 +61,9 @@
 
     </ion-row>
 
-    <ion-row text-center>
-      <ion-col></ion-col>
-      <ion-col></ion-col>
+    <ion-row text-center *ngFor='let data of showcourseteacher;let i = index' >
+      <ion-col><label>{{ data.idCourse }}</label></ion-col>
+      <ion-col><label>{{ data.nameCourse }}</label></ion-col>
       <ion-col><ion-button>ดูข้อมูล</ion-button></ion-col>
     </ion-row>
 
